@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+*{
+   margin:0px;
+   padding:0px;
+  /* border:1px solid black; */ 
+}
+
+.qTitle{
+   text-align:center;
+   font-weight:bold;
+   margin-top:60px;   
+}
+.qna-hour{
+   text-align: center;
+   margin-top:40px;
+   font-size:60px;
+}
+.customer_header{
+   display:flex;
+   text-align:center;
+   align-items:center;
+   justify-content:center;
+}
+
+.search{
+   justify-content:center;
+   
+} 
+#accordionQNA{
+   margin-top:50px;
+   margin-bottom:50px;
+   margin-left:auto;
+   margin-right:auto;
+   width:60%;
+   
+}
+.accordion-header{
+	font-size:20px;
+	font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #fff;
+
+}

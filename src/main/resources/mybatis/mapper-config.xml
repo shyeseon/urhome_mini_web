@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.Product" alias="Product"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.Pimage" alias="Pimage"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.Pager" alias="Pager"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.Member" alias="Member"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.Board" alias="Board"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.BoardProduct" alias="BoardProduct"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.ProductCategory" alias="ProductCategory"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.ProductOption" alias="ProductOption"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.Cart" alias="Cart"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.OrderItemList" alias="OrderItemList"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.OrderItem" alias="OrderItem"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.OrderHistory" alias="OrderHistory"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.Recipient" alias="Recipient"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.Orderer" alias="Orderer"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.MyPageOrderHistory" alias="MyPageOrderHistory"/>
+		<typeAlias type="com.mycompany.urihome_mini_web.dto.OnumberOrderHistory" alias="OnumberOrderHistory"/>
+		
+	</typeAliases>
+</configuration>

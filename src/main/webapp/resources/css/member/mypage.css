@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+* {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+.mypage-div {
+	margin-top: 130px;
+	width: 100%;
+	display: flex;
+}
+
+.tab-menu {
+	flex: 1;
+}
+
+.category {
+	top: 60px;
+	position: sticky;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.myshopping {
+
+}
+
+.info {
+	flex-direction:column;
+	flex: 5;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.info-div {
+	margin-bottom: 30px;
+	justify-content: space-between;
+}
+
+.member-info {
+}
+
+.info-check {
+	margin-top: 30px;
+	margin-bottom: 80px;
+	display: flex;
+	border: solid 1px #e2e3e5; 
+	border-radius: 10px;
+}
+
+.cart-receipt {
+	margin-bottom: 80px;
+	justify-content: space-around;
+	text-align: center;
+	border: solid 1px #e2e3e5; 
+	border-radius: 10px;
+	font-weight: bold;
+}
+
+.select-order {
+	flex: 1;
+	
+	margin-right: 10px;
+}
+
+.cancle-order{
+	flex: 1;
+	
+	
+}
+
+.order-status {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.order-receipt {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.status-content {
+	text-align: center;
+	font-size: 30px;
+}
+
+.recent-order {
+	margin-bottom: 80px;
+}
+
+.vl {
+  border-left: solid 1px #e2e3e5;
+}
+
+
+.nav-link {
+	color: gray;	
+}
+
+.nav-link:hover {
+	color: gray;
+}
+
+.nav-link:focus {
+	color: black;
+}
+
+.nav-item-category {
+	margin-left: 30px;
+	font-size: 18px;
+}
+
+
+#order-title {
+	font-size: 18.5px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+#logout-btn {
+	width: 80px;
+	height: 40px;
+	margin-top: 10px;
+	border: solid 1px #e2e3e5;
+	color: gray;
+	border-radius: 10px;
+	background-color: white;
+}
+

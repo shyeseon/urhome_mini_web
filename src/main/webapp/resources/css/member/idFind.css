@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+* {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+body {
+	font-size: 14px;
+	font-family: 'Roboto', sans-serif; /*글꼴 지정 */
+}
+
+.idfind-wrapper {
+	width: 600px;
+	height: 500px;
+	padding: 40px;
+	margin: 100px auto;
+	border: 1px solid;
+	border-radius: 6px;
+}
+
+.idfind-wrapper>h2 {
+	font-size: 45px;
+	font-weight: bold;
+	color: black;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+#idfind-form>input {
+	width: 100%;
+	height: 48px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	margin-top: 15px;
+	margin-bottom: 16px;
+	border-radius: 6px;
+	background-color: #F8F8F8; /*회색*/
+}
+
+.idfindbutton {
+	display: block;
+	text-align: center;
+	width: 50%;
+	height: 50px;
+	border-radius: 6px;
+	background-color: #007bff;
+	color: #fff;
+	cusor: pointer; /*마우스커서가 포인터로 변경*/
+	margin: 30px auto; /*수평 가운데 정렬하기위해 */
+}
+
+#idfind-form>input::placeholer {
+	color: #D2D2D2; /*밝은회색*/
+}
+
+#idfind-form>input[type="submit"] {
+	color: black;
+	font-size: 16px;
+	margin-top: 20px;
+}
+
+.idfind-function {
+	text-align: center;
+	margin-top: 65px;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 80vh;
+}
+
+#emailInput {
+	width: 100%;
+	height: 48px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	margin-top: 15px;
+	margin-bottom: 16px;
+	border-radius: 6px;
+	background-color: #F8F8F8; /*회색*/
+}
+
+#phoneInput {
+	width: 100%;
+	height: 48px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	margin-top: 15px;
+	margin-bottom: 16px;
+	border-radius: 6px;
+	background-color: #F8F8F8; /*회색*/
+}

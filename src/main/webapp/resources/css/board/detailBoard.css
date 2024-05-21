@@ -1,0 +1,54 @@
+@charset "UTF-8";
+*{
+	margin:0px;
+	pading:0px;
+}
+.btn_detailBoard{
+	border:1px solid black;
+	font-size: 14px;
+	border-radius: 4px;
+	padding:10px 50px 10px 50px;
+	margin-left: auto;
+	margin-right: auto;
+}  
+
+.inputBnumber{
+	font-size: 14px;
+	padding-bottom:10px;
+	border-bottom: 2px solid black;
+}
+.detailBoard-body{
+	width:80%;
+	margin: 0 auto;
+}
+.prevTitle, .nextTitle{
+	text-decoration: none;
+	color: black;
+	font-size: 14px;
+
+}
+.altPage{
+	display: flex;
+	justify-content: space-between;
+	padding:0px; 
+	list-style: none; 
+	margin-top:100px;
+	
+}
+a:hover{
+	text-decoration: underline;
+}
+.notice_img{
+	display: inline-block;
+	vertical-align: middle;
+}
+#bcontent{
+	text-align: left;
+	font-size: 100%;
+	margin-top:50px; 
+	width: 100%; 
+	height: 300px;
+	border-style: none;
+	resize: none;
+}
+

@@ -1,0 +1,24 @@
+@charset "UTF-8";
+*{
+   margin: 0px;
+   padding: 0px;
+   
+}
+
+.boardTitle{
+   text-align: left; 
+   margin-top:100px; 
+   margin-bottom:50px;
+   margin-left:200px; 
+   font-weight: bold;
+}
+
+tr{
+   margin-top:100px;
+   padding-bottom:100px;
+}
+#searchType{
+	justify-content:center;
+	margin-left: 10px;
+}
+

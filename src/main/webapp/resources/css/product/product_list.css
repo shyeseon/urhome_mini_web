@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+* {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+.container {
+	flex-direction: column;
+}
+.header {
+	margin-top: 120px;
+	flex-direction: column;
+}
+
+.best-product-title {
+	text-align: center;
+	margin-bottom: 30px;
+	font-weight: bolder;
+	font-family: 'Montserrat',"Noto Sans KR", AppleSDGothicNeo, "돋움", Dotum,sans-serif;
+}
+
+.bestproduct-img {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.carousel-control-prev {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	transform: translate(-10%, 260%);
+}
+
+.carousel-control-next {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	transform: translate(10%, 260%);
+}
+
+.bi-chevron-left{
+   font-size: 45px;
+   line-height: 40px;
+   color:rgb(0, 0, 0);
+   border-radius: 50%;
+}
+.bi-chevron-right{
+   font-size: 45px;
+   line-height: 40px;
+   color:rgb(0, 0, 0);
+   border-radius: 50%;
+
+}
+
+.productList {
+	flex: 3;
+	margin-top: 20px;
+}
+
+#productItem {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+#product_no {
+	width: 290px;
+	margin-left: 20px;
+}
+
+.body {
+	display: flex;
+	margin-top: 50px;
+}
+
+.fixed-tab {
+	flex: 1;
+	margin-right: 40px;
+	
+}
+
+#sticky {
+	position: sticky;
+	top: 60px;
+}
+
+.nav-link {
+	color: gray;	
+}
+
+.nav-link:hover {
+	color: gray;
+}
+
+.nav-link:focus {
+	color: black;
+}
+
+.nav-active{
+	color:black;
+}
+
+.nav-item-category {
+	margin-bottom: 7px;
+	margin-left: 30px;
+	font-size: 18px;
+}
+
+#cate-btn {
+	padding: 5px 18px;
+	border-radius: 25px;
+	border-color: #d9d9d9;
+	color: #929494;
+}
+
+#cate-btn:hover {
+	padding: 5px 18px;
+	border-radius: 25px;
+	border-color: #d9d9d9;
+	color: #929494;
+}
+
+#cate-btn:focus {
+	background-color: black;
+	color: #fff;
+}
+
+#return-btn {
+	opacity: 0.5;
+	color: black;
+	border-color: #929494;
+	background-color: white;
+	border-radius: 60%;
+}
+
+#return-btn:focus {
+	background-color: #929494;
+}
+
+#pname {
+	display: flex;
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 12px;
+	width: 280px;
+	text-overflow: ellipsis;
+	white-space: wrap;
+	overflow: hidden;
+}
+
+#pprice {
+	display: flex;
+	margin-bottom: 15px;
+	font-weight: bold;
+	font-size: 12px;
+	
+}
+
+#best-name {
+	display: flex;
+	margin-top: 25px;
+	margin-left: 7px;
+	font-weight: bold;
+	font-size: 14px;
+	width: 280px;
+	text-overflow: ellipsis;
+	white-space: wrap;
+	overflow: hidden;
+}
+
+#best-price {
+	display: flex;
+	margin-bottom: 15px;
+	margin-left: 7px;
+	font-weight: bold;
+	font-size: 13px;
+	
+}
+
+#cart {
+	  width: 41px;
+	  height: 39px;
+	  position: absolute;
+	  transform: translate(-135%, 615%);
+	  background-color:black;
+	  opacity : 0.4;
+	  border-radius: 50%;
+}
+
+.best-box {
+	position: absolute;
+	width: 70px;
+	height: 35px;
+	background-color: black;
+	transform: translate(0%, -1087%);
+}
+
+#box-font {
+	margin-top:6px;
+	font-family: "Rubik","Noto Sans KR",AppleSDGothicNeo,돋움,Dotum,sans-serif;
+	color: white;
+	text-align: center;
+}
+
+.pagination {
+	margin-top: 20px;
+}
+
+.page-link {
+	color: black;
+	border: none;
+}

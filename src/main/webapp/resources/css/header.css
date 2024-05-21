@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+.navbar{
+	display: flex;
+	height: 60px;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 12px;
+} 
+
+.dropdown:hover .dropdown-menu{
+	display:block;
+}
+
+#navbarDropdownCenter ul li button:after{
+	display:block;
+	width:100%;
+	content:'';
+	border-bottom:solid 2px #111;
+	transform: scaleX(0);
+	transition:transform 320ms ease-in-out;
+}
+
+#navbarDropdownCenter ul li button:hover:after{
+	transform: scaleX(1);
+}
+
+#navbarDropdownEnd{
+	padding-right: 0;
+}
+
+#navbarDropdownEnd .dropdown:hover .dropdown-menu{
+	right:0;
+}
+
+#cartInfo{
+	font-size:12px;
+	text-align: center;
+}
+
+@media screen and (max-width:768px){
+	.navbar{
+		flex-direction: column;
+		align-items:flex-start;
+		background-color:white;
+	}
+	
+	.navbar-toggler{
+		display: block;
+	}
+}

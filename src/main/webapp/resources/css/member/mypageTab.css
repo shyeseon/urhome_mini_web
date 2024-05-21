@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.category {
+	top: 60px;
+	position: sticky;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

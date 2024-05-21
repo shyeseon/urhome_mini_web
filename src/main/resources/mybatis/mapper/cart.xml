@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mycompany.urihome_mini_web.dao.CartDao">
+
+	<insert id="insert" parameterType="Cart">
+		<selectKey keyProperty="cnumber" order="BEFORE" resultType="int">
+			select seq_cid.nextval from dual
+		</selectKey>
+		insert into cart (cnumber, mid, pid, pbuyAmount)
+		values(#{cnumber},#{mid}, #{pid}, #{pbuyAmount})
+	</insert>
+
+	<select id="findByPidMid" parameterType="HashMap" resultType="Cart">
+		select mid, pid, pbuyAmount from cart 
+		where mid=#{mid} and pid=#{pid}
+	</select>
+	<select id="cartProduct" parameterType="String"
+		resultType="Cart">
+		select cnumber, mid, product.pid, pbuyAmount, pname, pprice, pstock
+		from cart, product
+		where cart.mid = #{mid}
+		and cart.pid=product.pid
+	</select>
+	
+	<update id="updateCart" parameterType="Cart">
+		update cart set pbuyAmount=#{pbuyAmount}
+		where mid=#{mid} and pid=#{pid} 
+	</update>
+	
+	<delete id="deleteCart" parameterType="HashMap">
+		delete from cart where mid=#{mid} and pid=#{pid}
+	</delete>
+	
+	<update id="changeCheckOrder" parameterType="Cart">
+		update cart set selected=#{selected}
+		where mid=#{mid} and pid=#{pid}
+	</update>
+	
+	<select id="getOrderItem" parameterType="String" resultType="OrderItemList">
+		select * from product
+		product inner join cart
+		on product.pid = cart.pid
+		where mid=#{mid}
+	</select>
+	
+	<select id="getCheckOrderItem" parameterType="String" resultType="OrderItemList">
+		select * from product
+		product inner join cart
+		on product.pid = cart.pid
+		where mid=#{mid} and selected='Y'
+	</select>
+</mapper>

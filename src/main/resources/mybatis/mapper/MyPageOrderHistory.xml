@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mycompany.urihome_mini_web.dao.MyPageOrderHistoryDao">
+
+	<select id="getOrderProductHistory" parameterType="String" resultType="MyPageOrderHistory">
+	SELECT h.mid, 
+         o.onumber, 
+         o.pid, 
+         p.pname, 
+         h.ototalPrice, 
+         h.oitemDate, 
+         h.ostatus, 
+         cnt.ocount
+  FROM orderItem o
+  JOIN orderHistory h ON h.onumber = o.onumber
+  JOIN product p ON p.pid = o.pid
+  JOIN (
+      SELECT onumber, COUNT(*) AS ocount
+      FROM orderItem
+      GROUP BY onumber
+  ) cnt ON cnt.onumber = o.onumber
+  WHERE h.mid = #{mid}
+  ORDER BY h.oitemDate DESC
+	</select>
+	
+	<select id="getOnumberOrderHistory" parameterType="HashMap" resultType="OnumberOrderHistory">
+	SELECT h.mid, 
+         o.onumber, 
+         o.pid, 
+         p.pname,
+         o.ptotalPrice,
+         h.oitemDate, 
+         h.ostatus,
+         h.ototalPrice
+  FROM orderItem o, orderHistory h, product p
+  WHERE h.mid = #{mid} and h.onumber=#{onumber} and h.onumber = o.onumber and p.pid = o.pid
+	</select>
+</mapper>

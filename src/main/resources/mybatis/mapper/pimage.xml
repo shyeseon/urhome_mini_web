@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.mycompany.urihome_mini_web.dao.PimageDao">
+	<insert id="insert" parameterType="Pimage">
+		<selectKey keyProperty="pimageIndex" order="BEFORE" resultType="int">
+			select seq_pimg.nextval from dual 
+		</selectKey>
+		insert into pimage(
+			pimageIndex, pid, pimageName, pimageType, pimageData, pthumbBodyType
+		)
+		values(
+			#{pimageIndex}, #{pid}, #{pimageName}, #{pimageType}, #{pimageData}, #{pthumbBodyType}
+		)
+	</insert>
+	<select id="selectByPidAndIndex" parameterType="HashMap" resultType="Pimage">
+		select pid, pimageName, pimageType
+		from (
+			select rownum as rnum, pid, pimageName, pimageType
+			from pimage
+			where pid=#{pid} and pthumbBodyType=#{pthumbBodyType}
+			order by pimageIndex
+			)
+		where rnum=#{index}
+	</select>
+	<select id="count" parameterType="HashMap" resultType="int">
+		select count(*)
+		from pimage
+		where pid=#{pid} and pthumbBodyType=#{pthumbBodyType}
+	</select>
+	<select id="selectProductImageData" parameterType="HashMap" resultType="Pimage">
+		select pimageData
+		from (
+			select rownum as rnum, pimageData
+			from pimage
+			where pid=#{pid} and pthumbBodyType=#{pthumbBodyType}
+			order by pimageIndex
+			)
+		where rnum=#{index}
+	</select>
+	<update id="update" parameterType="Pimage">
+		update pimage set
+			pid=#{pid}
+		<if test="pimageName != ''">
+				,pimageName=#{pimageName}, pimageType=#{pimageType}, 
+				pimageData=#{pimageData}, pthumbBodyType=#{pthumbBodyType}
+		</if>
+		where pid=#{pid}
+	</update>
+	<delete id="deleteByPid" parameterType="String">
+		delete from pimage where pid=#{pid}
+	</delete>
+	<delete id="deleteByPindex" parameterType="HashMap">
+		delete
+		from pimage
+		where pimageIndex in (
+			select pimageIndex
+			from(
+				select rownum as rnum, pimageIndex
+				from pimage
+				where pid=#{pid} and pthumbBodyType=#{pthumbBodyType} 
+				order by pimageIndex
+				)
+			where rnum in
+			<foreach collection="indexList" item="index" separator="," open="(" close=")">
+				#{index}
+			</foreach>
+		)
+	</delete>
+</mapper>

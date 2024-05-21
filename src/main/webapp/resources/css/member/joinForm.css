@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+#signUp{
+	text-align:center;
+}
+
+#joinFormDiv{
+	width:503px;
+	margin: 0 auto;
+}
+
+#mzip{
+	width:100px;
+	display:table-cell;
+}
+
+#mtel1, #mphone1{
+	width:80px;
+	display:table-cell;
+} 
+
+#mtel2, #mtel3, #mphone2, #mphone3{
+	width:140px;
+	display:table-cell;
+	margin-left:5px;
+}
+
+#mzip, #maddress{
+	background-color: #EBEBE4;
+}
+
+input::placeholder{
+	color:#E2E2E2;
+	font-size: 12px;
+}
+

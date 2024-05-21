@@ -1,0 +1,53 @@
+@charset "UTF-8";
+*{
+   margin:0px;
+   padding:0px;
+}
+
+.pathLink{
+   margin-top:6%;
+   margin-left:150px;
+   text-decoration: none;
+}
+a:link{
+   color:lightgray;
+   text-decoration: none;
+}
+h2{
+   text-align: center;
+   font-weight:500;
+   margin-top:30px;
+   margin-bottom:80px;
+   
+}
+#questionForm{
+   text-align: justify;
+   margin-left:20%;
+}
+input{
+   margin-bottom: 1.5rem;
+   height:30px;
+}
+#qtitle{
+   width:30%;
+   border-style:none none solid none;
+   margin-left: 30px;
+}
+#qwriter{
+	width:20%;
+   border-style:none none solid none;
+   margin-left: 30px;
+}
+
+#user-content{
+   height:400px;
+   width:80%;
+   margin-left:auto;
+   margin-right: auto;
+   border-width: thin;
+}
+.btn_submit{
+    margin-left:65%;
+    margin-bottom:50px;
+   
+}

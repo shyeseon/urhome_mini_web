@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mycompany.urihome_mini_web.dao.OrderHistoryDao">
+	<insert id="order" parameterType="OrderHistory">
+		<selectKey keyProperty="onumber" order="BEFORE" resultType="int">
+			select seq_ono.nextval from dual
+		</selectKey>
+		insert into orderHistory(onumber, mid, ostatus, ototalPrice, oitemDate)
+		values(#{onumber}, #{mid}, #{ostatus}, #{ototalPrice}, sysdate)
+	</insert>
+	
+	<select id="getOrderItem" parameterType="String" resultType="OrderItemList">
+		select * from product
+		product inner join cart
+		on product.pid = cart.pid
+		where mid=#{mid}
+	</select>
+	
+	<select id="getOnumber" parameterType="String" resultType="int">
+		select max(onumber)
+		from orderHistory
+		where mid=#{mid}
+	</select>
+	<select id="getOrderHistory" parameterType="String" resultType="OrderHistory">
+		select *
+		from orderHistory
+		where mid=#{mid}
+	</select>
+</mapper>

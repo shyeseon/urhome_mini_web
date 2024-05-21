@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.btn-upload {
+  width: 150px;
+  height: 30px;
+  background: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pthumbnailImage, #pbodyImage {
+  display: none; 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.scroll {
+    max-height: 600px;
+    overflow-y: auto;
+}

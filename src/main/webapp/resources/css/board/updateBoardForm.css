@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+#wrap{
+	margin: 0 auto;
+}
+form{
+	
+}
+.board-input{
+	border-top:1px solid gray;
+	margin:0px 15px 0px 15px;
+}
+
+.admin_img{
+	margin-left: 30px;
+} 
+
+/* #input_title{
+	border-top-style:none;
+	border-right-style:none;
+	border-bottom-style:1px solid black;
+	border-left-style:none;
+	margin: 20px 0px 20px 0px;
+	
+} */
+.inputBnumber{
+	font-size:13px; 
+	border-style: none; 
+	text-align: center;
+	margin-left: 30px;
+}
+
+#battach{
+	display: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.imgUpload{
+	padding:10px 15px 10px 15px;
+	border:solid;
+	border-width:thin;
+	border-radius: 5px;
+	margin-left: 30px;
+}
+#bcontent{
+	resize: none;
+}

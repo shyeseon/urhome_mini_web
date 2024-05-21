@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mycompany.urihome_mini_web.dao.BoardProductDao">
+
+
+	 <insert id="insert" parameterType="BoardProduct"> 
+		<selectKey keyProperty="bpnumber" order="BEFORE" resultType="int">
+			select seq_bpno.nextVal from dual
+		</selectKey>
+		insert into boardProduct(bpnumber, bptitle, mid, bpcontent, bpdate, bptype,
+			 	pid, bpattachoname, bpattachtype, bpattachdata)
+			 values (#{bpnumber}, #{bptitle}, #{mid}, #{bpcontent}, sysdate, #{bptype},
+			 #{pid}, #{bpattachoname}, #{bpattachtype}, #{bpattachdata}
+			)
+	</insert>
+	
+	<select id="count" parameterType="HashMap" resultType="int">
+		select count(*) from boardProduct where pid=#{pid} and bptype=#{bptype}
+	</select>
+	
+	<select id="selectByPage" parameterType="HashMap" resultType="BoardProduct">
+		<![CDATA[
+			select rnum, bpnumber, bptitle, mid, bpcontent, bpdate, bptype, pid, bpattachoname
+			from (
+			 	select rownum as rnum, bpnumber, bptitle, mid, bpcontent, bpdate, bptype, pid, bpattachoname
+			 	from (
+			 		select rownum as rnum, bpnumber, bptitle, mid, bpcontent, bpdate, bptype, pid, bpattachoname
+			 	from boardProduct
+			 	where pid=#{pid} and bptype=#{bptype}
+			 	order by bpnumber desc
+			 )
+			 where rownum <= #{pager.endRowNo}
+		)
+		where rnum >= #{pager.startRowNo}	 	
+		]]>
+	</select>
+	
+	<select id="selectByBpno" parameterType="int" resultType="BoardProduct">
+		select bpnumber, bptitle, mid, bpcontent, bpdate, bptype, pid
+			 	from boardProduct
+		where bpnumber=#{bpnumber}
+	</select>
+	<delete id="deleteByBpno" parameterType="int">
+		delete from boardProduct
+		where bpnumber=#{bpnumber}
+	</delete>
+	<update id="updateByBpno" parameterType="BoardProduct">
+		update boardProduct
+		set bptitle=#{bptitle}, bpcontent=#{bpcontent}
+		<if test="bpattachoname!=null">
+			,bpattachoname=#{bpattachoname}
+			,bpattachtype=#{bpattachtype}
+			,bpattachdata=#{bpattachdata}
+		</if>
+		where bpnumber=#{bpnumber}
+	</update>
+	<select id="selectImageByBpno" parameterType="int" resultType="BoardProduct">
+		select bpattachoname, bpattachtype
+		from boardProduct
+		where bpnumber=#{bpnumber}
+	</select>
+	<select id="selectImageDataByBpno" parameterType="int" resultType="BoardProduct">
+		select bpattachdata
+		from boardProduct
+		where bpnumber=#{bpnumber}
+	</select>
+	
+	
+</mapper>

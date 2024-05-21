@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+#wrap{
+	margin: 0 auto;
+}
+
+
+#addNotice{
+	justify-content:flex-end;
+	width:60px;
+	height:40px;
+}

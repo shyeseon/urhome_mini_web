@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+#orderFormTag{
+	text-align:center;
+}
+
+#orderFormDiv{
+	width:600px;
+	margin-left:auto;
+}
+
+#orderProductDiv{
+	width:250px;
+	margin-right:auto;
+}
+
+#address1{
+	width:70px;
+	display:table-cell;
+}
+
+#cellPhone1_1, #cellPhone2_1{
+	width:80px;
+	display:table-cell;
+} 
+
+#cellPhone1_2, #cellPhone1_3, #cellPhone2_2, #cellPhone2_3{
+	width:140px;
+	display:table-cell;
+	margin-left:5px;
+}
+
+input::placeholder{
+	color:#E2E2E2;
+	font-size: 12px;
+}
+
+#bank, #card, #kakaopay, #mobile, #realtime{
+	background-color:transparent;
+	border:none;
+}
+
+button[name=paymentBtn] img{
+	width:100px;
+	height:50px;
+}
+
+button[name=paymentBtn]:hover img, button[name=paymentBtn]:active img{
+	filter:grayscale(0%);
+}
+
+.grayscale{
+	filter:grayscale(100%);
+}
+
+#ozip, #oaddress, #rzip, #raddress{
+	background-color: #EBEBE4;
+}

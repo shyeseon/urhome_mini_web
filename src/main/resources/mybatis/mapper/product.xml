@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.mycompany.urihome_mini_web.dao.ProductDao">
+	<select id="count" resultType="int">
+		select count(*) from product
+	</select>
+	
+	<select id="selectByPage" parameterType="Pager" resultType="Product">
+		<![CDATA[
+		select rnum, pid, pname, pcategoryname, pbanner, pprice, pstock, pdate, psellamount, psales, pstatus
+		from(
+			select rownum as rnum, pid, pname, pcategoryname, pbanner, pprice, pstock, pdate, psellamount, psales, pstatus
+			from(
+				select p.pid, pname, pc.pcategoryname, pc.pbanner, pprice, pstock, pdate, psellamount, psales, pstatus
+				from product p, productcategory pc
+				where p.pid=pc.pid
+				order by pdate desc
+			)
+			where rownum <= #{endRowNo}
+		)
+		where rnum >= #{startRowNo}
+		]]>
+	</select>
+	
+	<insert id="insert" parameterType="Product">
+		insert into product(
+			pid, pname, pprice, pstock, 
+			pdate, psellamount, psales, producthitcount, pstatus
+		)
+		values(
+			#{pid}, #{pname}, #{pprice}, #{pstock}, 
+			 sysdate, 0, 0, 0, #{pstatus}
+		)
+	</insert>
+	
+	<select id="selectByPid" parameterType="String" resultType="Product">
+		select pid, pname, pprice, pstock, pdate, psellamount, psales, pstatus
+		from product
+		where pid=#{pid}
+	</select>
+	
+	<update id="update" parameterType="Product">
+		update product set
+			pname=#{pname}, pprice=#{pprice}, pstock=#{pstock}, psellAmount=#{psellAmount}, psales=#{psales}, pstatus=#{pstatus}			
+		where pid=#{pid}
+	</update>
+	
+	<update id="disableByPid" parameterType="Product">
+		update product set pstatus=#{pstatus} where pid=#{pid}
+	</update>
+	
+	<select id="selectAll" resultType="Product">
+		select * from product
+	</select>
+	
+	<select id="selectByPcategoryName" parameterType="String" resultType="Product">
+		select product.pid, product.pname, product.pprice
+		from product, productCategory
+		where product.pid = productCategory.pid and pcategoryName=#{pcategoryName}
+	</select>
+	
+	<select id="getSales" resultType="int">
+		select sum(ototalprice*0.1) as sales from orderHistory
+	</select>
+	
+	<select id="getExpenses" resultType="int">
+		select sum(ototalprice) as expenses from orderHistory
+	</select>
+	
+	<select id="getProduct" parameterType="String" resultType="Product">
+		select pname, pprice 
+		from product
+		where pid=#{pid}
+	</select>
+	
+	<select id="selectProductByPbanner" parameterType="String" resultType="Product">
+		select p.pid, p.pname, p.pprice
+		from product p, productCategory pc
+		where p.pid = pc.pid and pc.pbanner=#{pbanner}
+	</select>
+	
+	
+	
+</mapper>

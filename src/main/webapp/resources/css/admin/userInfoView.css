@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.table {
+    border-collapse: collapse; /* 테이블 셀 경계를 합침 */  
+}
+
+.table th, .table td {
+    border: 1px solid #dddddd; /* 모든 셀에 실선 경계 추가 */
+    border-radius: 6px;
+    padding: 8px; /* 내부 여백 설정 (원하는 값으로 조정) */
+    text-align: center; /* 셀 내부 텍스트를 왼쪽으로 정렬 */
+}
+
+.table th:first-child {
+    width: 300px; /* 첫 번째 항목 열의 너비를 100px로 지정 */
+    padding: 8px; /* 내부 여백 설정 (원하는 값으로 조정) */
+}
+
+.table th{
+	text-align:center;	
+}
+
+
+
+.table {
+    margin: 0 auto; /* 좌우 가운데 정렬 */
+}
+
+
+
+.table td:first-child {
+    background-color: #f2f2f2; /* 왼쪽 열의 배경색 */
+    width:400px;
+    vertical-align: middle;
+}
+
+.table tr th {
+    background-color: #f2f2f2; /* 헤더 셀 배경색 지정 (선택사항) */
+}
+
+
+.input-width {
+    width: 300px;
+    height: 30px;
+    font-size: 30px;    
+}

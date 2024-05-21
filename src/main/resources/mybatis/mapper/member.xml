@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mycompany.urihome_mini_web.dao.MemberDao">
+	<!-- <select id="getMemberId" parameterType="String" resultType="String"> 
+		select mid 
+		from member 
+		where mname=#{mname} and mphone=#{mphone} 
+	</select> -->
+
+	<select id="selectByMid" parameterType="String" resultType="Member">
+		select mid, mname, mpassword, memail, mtel, mphone, mdate, 
+			mzip, maddress, mdetailAddress, mrole, agree1, agree2, agree3
+		from member
+		where mid=#{mid}
+	</select>
+	
+	<insert id="insert" parameterType="Member">
+		insert into member(mid, mname, mpassword, memail, mtel, mphone, mdate, 
+			mzip, maddress, mdetailAddress, mrole, agree1, agree2, agree3)
+		values(#{mid}, #{mname}, #{mpassword}, #{memail}, #{mtel}, #{mphone}, sysdate, 
+			#{mzip}, #{maddress}, #{mdetailAddress}, #{mrole}, #{agree1}, #{agree2}, #{agree3})
+	</insert>	
+	
+	<select id="count" resultType="int">
+		select count(*) from member	
+	</select>	
+	
+	<select id="selectByPage" parameterType="Pager" resultType="Member">
+		<![CDATA[
+		select mid, mpassword, mname, memail, mtel, mphone, mdate, mzip, maddress, mdetailAddress, mrole, agree1, agree2, agree3
+		from (
+		    select rownum as rnum, mid, mpassword, mname, memail, mtel, mphone, mdate, mzip, maddress, mdetailAddress, mrole, agree1, agree2, agree3
+		    from    (
+		        select mid, mpassword, mname, memail, mtel, mphone, mdate, mzip, maddress, mdetailAddress, mrole, agree1, agree2, agree3
+		        from member        
+		        order by mid desc
+		    )
+		    where rownum <=#{endRowNo}
+		)
+		where rnum >=#{startRowNo}	
+		]]>
+	</select>
+	
+	<delete id="deleteByMid" parameterType="String">
+		delete from member where mid=#{mid}		
+	</delete>
+	
+	<update id="update" parameterType="Member">
+		update member set
+			<if test="mpassword != null and mpassword != ''">
+				mpassword=#{mpassword},
+			</if>
+			mname=#{mname},
+			mtel=#{mtel},
+			mphone=#{mphone},
+			mzip=#{mzip},
+			maddress=#{maddress},
+			mdetailAddress=#{mdetailAddress},	
+			memail=#{memail}	
+		where mid=#{mid}
+	</update>
+	
+	<select id="getMemberCount" resultType="int">
+		select count(mid) as memberCount from member
+		where mrole = 'ROLE_USER'
+	</select>
+</mapper>

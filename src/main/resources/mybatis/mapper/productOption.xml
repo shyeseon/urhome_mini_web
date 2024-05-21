@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.mycompany.urihome_mini_web.dao.ProductOptionDao">
+	<insert id="insert">
+		<selectKey keyProperty="poptionIndex" order="BEFORE" resultType="int">
+			select seq_poption.nextval from dual 
+		</selectKey>
+		insert into productOption(poptionIndex, pid, poption, poptionValue)
+		values(#{poptionIndex}, #{pid}, #{poption}, #{poptionValue})
+	</insert>
+	
+	<delete id="deleteByPid" parameterType="String">
+		delete from productOption where pid=#{pid}
+	</delete>
+	
+	<select id="selectByPid" parameterType="String" resultType="ProductOption">
+		select poption, poptionValue
+		from productOption
+		where pid=#{pid}
+		order by poptionIndex
+	</select>
+	
+	<delete id="deleteByPidOption" parameterType="ProductOption">
+		delete from productOption 
+		where pid=#{pid} and poption = #{poption}
+	</delete>
+</mapper>

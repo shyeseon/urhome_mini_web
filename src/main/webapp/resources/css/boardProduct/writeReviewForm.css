@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+#btitle input::placeholder {
+	color: #ccc;	
+}
+
+#back-btn {
+	font-size: 30px;
+	background-color: white;
+	border: none;
+	margin-right: 10px;
+}
