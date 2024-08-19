@@ -38,5 +38,5 @@ urihome 온라인 스토어에서 다양한 스타일과 고급스러운 디자�
 
 상품 목록 페이지 
 
-<img src= "https://ibb.co/g6n6DY7"><img src="https://i.ibb.co/25b5jJ6/image.png" alt="이미지 설명" width="550" height="650">
+<a href="https://ibb.co/g6n6DY7"><img src="https://i.ibb.co/25b5jJ6/image.png" alt="image" border="0"></a>
 
