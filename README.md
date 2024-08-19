@@ -4,9 +4,8 @@
 ## **프로젝트 소개**
 urihome 온라인 스토어에서 다양한 스타일과 고급스러운 디자인의 테이블웨어를 만나보세요. 
 
-##**기술 스택**
-
-(<a href="https://ibb.co/TBbJvQF"><img src="https://i.ibb.co/WWP7xrY/2024-08-19-171911.png" alt="2024-08-19-171911" border="0"></a>)
+## **기술 스택**
+<a href="https://ibb.co/TBbJvQF"><img src="https://i.ibb.co/WWP7xrY/2024-08-19-171911.png" alt="2024-08-19-171911" border="0"></a>
 
 ## **주요 기능**
 **1. 사용자 관리 시스템**
