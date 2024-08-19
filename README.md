@@ -32,4 +32,4 @@ urihome 온라인 스토어에서 다양한 스타일과 고급스러운 디자�
 상품 관리, 고객 정보 관리, 게시판 관리 기능
 
 ## **구현**
-![image](https://github.com/user-attachments/assets/c2ba0dbd-7bc5-43fd-a530-1011010dc665)
+<img src="[이미지_링크](https://github.com/user-attachments/assets/c2ba0dbd-7bc5-43fd-a530-1011010dc665)" alt="이미지 설명" width="500" height="300">
